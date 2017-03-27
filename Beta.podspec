@@ -18,19 +18,19 @@ Pod::Spec.new do |s|
 		core.ios.dependency 'SSZipArchive'
   end
 
-  # s.subspec 'PWLocation' do |location|
-#     location.ios.vendored_frameworks = 'Framework/PWLocation.framework'
-#   	location.dependency 'Phunware/Beta/PWCore'
-# 	  location.dependency 'MistSDK'
-# 
-#   	location.ios.library = 'c++'
-# 	  location.ios.frameworks = 'Security', 'QuartzCore', 'SystemConfiguration', 'MobileCoreServices', 'CoreTelephony', 'CoreBluetooth', 'CoreMotion', 'CoreLocation', 'MapKit'
-#   	location.library = 'sqlite3', 'z', 'xml2.2'
-#   end
+  s.subspec 'PWLocation' do |location|
+    location.ios.vendored_frameworks = 'Framework/PWLocation.framework'
+  	location.dependency 'Beta/PWCore'
+	  location.dependency 'MistSDK'
+
+  	location.ios.library = 'c++'
+	  location.ios.frameworks = 'Security', 'QuartzCore', 'SystemConfiguration', 'MobileCoreServices', 'CoreTelephony', 'CoreBluetooth', 'CoreMotion', 'CoreLocation', 'MapKit'
+  	location.library = 'sqlite3', 'z', 'xml2.2'
+  end
 
 	s.subspec 'PWMapKit' do |mapkit|
     mapkit.ios.vendored_frameworks = 'Framework/PWMapKit.framework'
-	  mapkit.ios.dependency 'Phunware/Beta/PWLocation'
+	  mapkit.ios.dependency 'Beta/PWLocation'
   	mapkit.ios.frameworks = 'Security', 'CoreGraphics', 'QuartzCore', 'SystemConfiguration', 'MobileCoreServices', 'CoreTelephony', 'CoreLocation', 'MapKit'
   end
 
